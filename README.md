@@ -26,3 +26,14 @@ To setup your development box, follow these steps:
 3. Setup for iOS platform on a Mac   
 	* Download Xcode from the Apple developer site or get it from the Mac App Store. You will also need the Command-Line-Tools. The Command-Line-Tools can be installed from the Downloads tab in Xcode Preferences.
 	* Make a ```sudo npm update -g ios-sim``` to be able to start iOS-Simulater from the command line.
+
+4. Setup for android platform
+	* TODO
+	
+5. Add platforms to your project
+	* '''ionic platform ios'''
+	* '''ionic platform android'''
+	
+6. Add required Cordova plugins to your procject
+	* TODO
+	
