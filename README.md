@@ -31,8 +31,8 @@ To setup your development box, follow these steps:
 	* TODO
 	
 5. Add platforms to your project
-	* '''ionic platform ios'''
-	* '''ionic platform android'''
+	* ```ionic platform ios```
+	* ```ionic platform android```
 	
 6. Add required Cordova plugins to your procject
 	* TODO
