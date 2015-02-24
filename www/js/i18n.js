@@ -22,7 +22,7 @@ angular.module('osl')
 		MENU_AGENDA: 'Tagesordnung',
 		MENU_MOTIONS: 'Anträge',
 		MENU_ELECTIONS: 'Wahlen',
-		MENU_PARTICIPANTS: 'Teilnehmer',
+		MENU_PARTICIPANTS: 'Teilnehmer/innen',
 		MENU_FILES: 'Dateien',
 		MENU_SETTINGS: 'Einstellungen',
 
