@@ -16,8 +16,9 @@ To setup your development box, follow these steps:
 
 2. Install the following node modules: 
 	```
-	[sudo] npm install -g cordova
 	[sudo] npm install -g bower
+	[sudo] npm install -g gulp
+	[sudo] npm install -g cordova
 	[sudo] npm install -g ionic
 	```
 
