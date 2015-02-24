@@ -1,5 +1,6 @@
 
-angular.module('osl', ['ionic'])
+angular.module('osl', [	'ionic', 
+						'pascalprecht.translate'] )
 
 	.run(function($ionicPlatform) {
   		$ionicPlatform.ready(function() {
@@ -82,12 +83,20 @@ angular.module('osl', ['ionic'])
 				url: "/settings",
 				views: {
 					'menuContent' : {
-						templateUrl: "templates/settings.html",
+						controller: 'SettingsCtrl',
+						templateUrl: "templates/settings.html"
 					}
 				}
 			});
 			
 
   		$urlRouterProvider.otherwise('/app/files');		
+	})
+	
+	.factory('Settings', function () {
+		var Settings = {
+	    	language: 'en_US'
+	  	};
+	  	return Settings;
 	});
-		
+			
