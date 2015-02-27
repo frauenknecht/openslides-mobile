@@ -27,8 +27,8 @@ To setup your development box, follow these steps:
 	* Download Xcode from the Apple developer site or get it from the Mac App Store. You will also need the Command-Line-Tools. The Command-Line-Tools can be installed from the Downloads tab in Xcode Preferences.
 	* To be able to run app in iOS-Simulater or on a Device from the command line, install:
 	 ```
-	 sudo npm update -g ios-sim
-	 sudo npm update -g ios-deploy
+	 [sudo] npm install -g ios-sim
+	 [sudo] npm install -g ios-deploy
 	 ```
 
 4. Setup for android platform
