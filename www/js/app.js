@@ -1,7 +1,6 @@
 
 angular.module('osl', [	'ionic', 
-						'pascalprecht.translate',
-						'ngCordova'] )
+						'pascalprecht.translate'] )
 
 	.run(function($ionicPlatform) {
   		$ionicPlatform.ready(function() {
