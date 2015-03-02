@@ -33,3 +33,6 @@ To setup your development box, follow these steps:
 	* ```ionic platform ios``` (on a Mac)
 	* ```ionic platform android```
 		
+6. Install all npm and bower packages
+	* ```npm install```
+	* ```node_modules/.bin/bower install```
