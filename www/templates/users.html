@@ -8,11 +8,16 @@
 			<ion-search placeholder="{{ 'USER_SEARCH' | translate }}" filter="search"></ion-search>
 		</div>
 		<div class="card" ng-if="users.length">
-				<a class="item" ng-repeat="user in users | filter:search.value" ui-sref="app.users-detail({id: user.id})">
-				<h2>{{user.first_name}} {{user.last_name}}</h2>
-				<p>{{user.groups}} {{user.structure_level}}</p>
-				<i ng-if="user.is_present" class="icon ion-checkmark"></i>
-			</a>
+				<a class="item" 
+					 ng-repeat="user in users | filter:search.value" 
+					 ui-sref="app.users-detail({id: user.id})">					 
+					 <h2>{{user.first_name}} {{user.last_name}}</h2>
+					 <p>{{user.groups}} {{user.structure_level}}</p>
+					 <p>{{ 'USER_PRESENT' | translate }}: 
+						 <i ng-if="user.is_present" class="icon ion-checkmark"></i>
+						 <i ng-if="!user.is_present" class="icon ion-close"></i>					
+					 </p>
+				</a>
 		</div>			
   </ion-content>
 </ion-view>

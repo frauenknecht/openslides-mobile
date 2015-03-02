@@ -16,6 +16,7 @@ angular.module('osl')
 		MENU_SETTINGS: 'Settings',
 		
 		USER_SEARCH: 'Search a user',
+		USER_PRESENT: 'Present',
 		
 		SETTINGS_LANGUAGE: 'Language',
 		SETTINGS_GERMAN: 'German',
@@ -33,7 +34,8 @@ angular.module('osl')
 		MENU_SETTINGS: 'Einstellungen',
 
 		USER_SEARCH: 'Nach Benutzer suchen',
-		
+		USER_PRESENT: 'Anwesend',
+				
 		SETTINGS_LANGUAGE: 'Sprache',		
 		SETTINGS_GERMAN: 'Deutsch',
 		SETTINGS_ENGLISH: 'Englisch'				
