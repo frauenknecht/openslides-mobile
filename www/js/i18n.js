@@ -15,6 +15,8 @@ angular.module('osl')
 		MENU_FILES: 'Files',
 		MENU_SETTINGS: 'Settings',
 		
+		USER_SEARCH: 'Search a user',
+		
 		SETTINGS_LANGUAGE: 'Language',
 		SETTINGS_GERMAN: 'German',
 		SETTINGS_ENGLISH: 'English'		
@@ -30,6 +32,8 @@ angular.module('osl')
 		MENU_FILES: 'Dateien',
 		MENU_SETTINGS: 'Einstellungen',
 
+		USER_SEARCH: 'Nach Benutzer suchen',
+		
 		SETTINGS_LANGUAGE: 'Sprache',		
 		SETTINGS_GERMAN: 'Deutsch',
 		SETTINGS_ENGLISH: 'Englisch'				
