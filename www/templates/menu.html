@@ -1,9 +1,7 @@
-<ion-side-menus>
+<ion-side-menus enable-menu-with-back-views=false>
 	<ion-side-menu-content>    
 		<ion-nav-bar class="bar-stable">
-			<ion-nav-buttons side="left">
-				<button class="button button-clear" menu-toggle="left"><span class="icon ion-navicon"></span></button>
-			</ion-nav-buttons>
+			<ion-nav-back-button></ion-nav-back-button>
     </ion-nav-bar>
     
 		<ion-nav-view name="menuContent" animation="slide-left-right">
@@ -17,25 +15,25 @@
 
     <ion-content class="has-header">
       <ion-list>
-				<ion-item class="item-icon-left" ui-sref="app.projector" menu-close>
+				<ion-item class="item-icon-left" ui-sref="app.projector" nav-clear menu-close>
 					<span class="icon ion-videocamera"></span> {{ 'MENU_PROJECTOR' | translate }}
 				</ion-item>
-				<ion-item class="item-icon-left" ui-sref="app.agenda" menu-close>
+				<ion-item class="item-icon-left" ui-sref="app.agenda" nav-clear menu-close>
 					<span class="icon ion-clipboard"></span> {{ 'MENU_AGENDA' | translate }}
 				</ion-item>
-				<ion-item class="item-icon-left" ui-sref="app.motions" menu-close>
+				<ion-item class="item-icon-left" ui-sref="app.motions" nav-clear menu-close>
 					<span class="icon ion-document"></span> {{ 'MENU_MOTIONS' | translate }}
 				</ion-item>
-				<ion-item class="item-icon-left" ui-sref="app.elections" menu-close>
+				<ion-item class="item-icon-left" ui-sref="app.elections" nav-clear menu-close>
 					<span class="icon ion-stats-bars"></span> {{ 'MENU_ELECTIONS' | translate }}
 				</ion-item>
-				<ion-item class="item-icon-left" ui-sref="app.participants" menu-close>
+				<ion-item class="item-icon-left" ui-sref="app.users" nav-clear menu-close>
 					<span class="icon ion-person"></span> {{ 'MENU_PARTICIPANTS' | translate }}
 				</ion-item>
-				<ion-item class="item-icon-left" ui-sref="app.files" menu-close>
+				<ion-item class="item-icon-left" ui-sref="app.files" nav-clear menu-close>
 					<span class="icon ion-paperclip"></span> {{ 'MENU_FILES' | translate }}
 				</ion-item>
-				<ion-item class="item-icon-left" ui-sref="app.settings" menu-close>
+				<ion-item class="item-icon-left" ui-sref="app.settings" nav-clear menu-close>
 					<span class="icon ion-gear-a"></span> {{ 'MENU_SETTINGS' | translate }}
 				</ion-item>
       </ion-list>

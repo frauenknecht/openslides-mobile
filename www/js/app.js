@@ -1,6 +1,7 @@
 
 angular.module('osl', [	'ionic', 
-						'pascalprecht.translate'] )
+						'pascalprecht.translate',
+						'ngCordova'] )
 
 	.run(function($ionicPlatform) {
   		$ionicPlatform.ready(function() {
@@ -61,20 +62,42 @@ angular.module('osl', [	'ionic',
 				}
 			})
 
-			.state('app.participants', {
-				url: "/participants",
+			.state('app.election.detail', {
+				url: "/election/:id",
 				views: {
 					'menuContent' : {
-						templateUrl: "templates/participants.html"
+						controller: 'ElectionDetailCtrl',						
+						templateUrl: "templates/election_detail.html"
 					}
 				}
+			})
+
+			.state('app.users', {
+				url: "/users",
+				views: {
+					'menuContent' : {
+						controller: 'UsersCtrl',						
+						templateUrl: "templates/users.html"
+					}
+				}
+			})
+
+			.state('app.users-detail', {
+				url: "/users/:id",
+				views: {
+					'menuContent' : {
+						controller: 'UserDetailCtrl',
+						templateUrl: "templates/user_detail.html"
+					}
+				}											
 			})
 
 			.state('app.files', {
 				url: "/files",
 				views: {
 					'menuContent' : {
-						templateUrl: "templates/files.html",
+						controller: 'FilesCtrl',						
+						templateUrl: "templates/files.html"
 					}
 				}
 			})
@@ -90,7 +113,7 @@ angular.module('osl', [	'ionic',
 			});
 			
 
-  		$urlRouterProvider.otherwise('/app/files');		
+  		$urlRouterProvider.otherwise('/app/projector');		
 	})
 	
 	.factory('Settings', function () {
@@ -98,5 +121,51 @@ angular.module('osl', [	'ionic',
 	    	language: 'en_US'
 	  	};
 	  	return Settings;
-	});
+	})
+	
+	.factory('Users', ['$http', function ($http) {
+	
+		var users = [
+	    	{
+	         	id				: "1",
+	         	is_present		: true,
+				title			: "",
+				first_name		: "Ashok",
+				last_name		: "Kumar",
+				structure_level	: "Indien",
+				about_me		: "",
+				comment			: "",
+				groups			: "Delegierte/r"
+	    	},
+
+			{
+	         	id				: "2",
+	         	is_present		: false,
+				title			: "",
+				first_name		: "Bob",
+				last_name		: "Smith",
+				structure_level	: "Neuseeeland",
+				about_me		: "",
+				comment			: "",
+				groups			: ""
+			}
+		];
+	
+	  	return {
+		
+			all : function() {
+				return users;			
+			},
+		
+			find : function(id) {
+				for(i=0; i<users.length; i++){
+					if(users[i].id == id){
+						return users[i];
+					}	
+				}
+			}  		
+	  	}
+
+	}]);
+	
 			
