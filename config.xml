@@ -1,62 +1,52 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-
-<widget id="org.openslides.mobile" version="0.1.0" 
-	xmlns="http://www.w3.org/ns/widgets" 
-	xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  
-	<name>OpenSlides</name>
-  
-	<description>
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="org.openslides.mobile" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>OpenSlides</name>
+    <description>
         OpenSlides for mobile devices.
   </description>
-
-  <author email="support@openslides.org" href="http://openslides.org">
+    <author email="support@openslides.org" href="http://openslides.org">
        The OpenSlides Team
   </author>
-		
-  <content src="index.html"/>
-  <access origin="*"/>
-
-  <preference name="Fullscreen" value="false" />
-  <preference name="Orientation" value="default" />
-  <preference name="webviewbounce" value="false"/>
-  <preference name="UIWebViewBounce" value="false"/>
-  <preference name="DisallowOverscroll" value="true"/>  
-  <preference name="HideKeyboardFormAccessoryBar" value="false" />
-
-  <platform name="android">
-      <preference name="KeepRunning" value="true"/>
-      <preference name="LoadUrlTimeoutValue" value="20000"/>
-      <preference name="SplashScreen" value="splash"/>
-      <preference name="SplashScreenDelay" value="3000"/>
-      <preference name="InAppBrowserStorageEnabled" value="true"/>
-      <preference name="LoadingDialog" value="null"/>
-      <preference name="LoadingPageDialog" value="null"/>
-      <preference name="ErrorUrl" value="null"/>
-      <preference name="ShowTitle" value="false"/>
-      <preference name="logLevel" value="ERROR"/>
-      <preference name="AndroidLaunchMode" value="singleTop"/>	  
-			<preference name="android-minSdkVersion" value="15" />
-			<preference name="android-targetSdkVersion" value="19" />	  
-  </platform>
-
-  <platform name="ios">
-      <preference name="EnableViewportScale" value="true" />
-      <preference name="MediaPlaybackRequiresUserAction" value="true" />
-      <preference name="AllowInlineMediaPlayback" value="false" />
-      <preference name="BackupWebStorage" value="none" />
-      <preference name="TopActivityIndicator" value="gray" />
-      <preference name="KeyboardDisplayRequiresUserAction" value="false" />
-      <preference name="SuppressesIncrementalRendering" value="false" />
-      <preference name="GapBetweenPages" value="0" />
-      <preference name="PageLength" value="0" />
-      <preference name="PaginationBreakingMode" value="page" />
-      <preference name="PaginationMode" value="unpaginated" />
-      <preference name="UIWebViewDecelerationSpeed" value="fast" />	  
-  </platform>
-
-  <feature name="StatusBar">
-    <param name="ios-package" value="CDVStatusBar" onload="true"/>
-  </feature>
-
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="Fullscreen" value="false" />
+    <preference name="Orientation" value="default" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="HideKeyboardFormAccessoryBar" value="false" />
+    <platform name="android">
+        <preference name="KeepRunning" value="true" />
+        <preference name="LoadUrlTimeoutValue" value="20000" />
+        <preference name="SplashScreen" value="splash" />
+        <preference name="SplashScreenDelay" value="3000" />
+        <preference name="InAppBrowserStorageEnabled" value="true" />
+        <preference name="LoadingDialog" value="null" />
+        <preference name="LoadingPageDialog" value="null" />
+        <preference name="ErrorUrl" value="null" />
+        <preference name="ShowTitle" value="false" />
+        <preference name="logLevel" value="ERROR" />
+        <preference name="AndroidLaunchMode" value="singleTop" />
+        <preference name="android-minSdkVersion" value="15" />
+        <preference name="android-targetSdkVersion" value="19" />
+    </platform>
+    <platform name="ios">
+        <preference name="EnableViewportScale" value="true" />
+        <preference name="MediaPlaybackRequiresUserAction" value="true" />
+        <preference name="AllowInlineMediaPlayback" value="false" />
+        <preference name="BackupWebStorage" value="none" />
+        <preference name="TopActivityIndicator" value="gray" />
+        <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+        <preference name="SuppressesIncrementalRendering" value="false" />
+        <preference name="GapBetweenPages" value="0" />
+        <preference name="PageLength" value="0" />
+        <preference name="PaginationBreakingMode" value="page" />
+        <preference name="PaginationMode" value="unpaginated" />
+        <preference name="UIWebViewDecelerationSpeed" value="fast" />
+    </platform>
+    <feature name="StatusBar">
+        <param name="ios-package" onload="true" value="CDVStatusBar" />
+    </feature>
+    <engine name="android" version="3.7.1" />
+    <engine name="ios" version="3.8.0" />
 </widget>
