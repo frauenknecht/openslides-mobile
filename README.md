@@ -14,11 +14,13 @@ To setup your development box, follow these steps:
 
 1. Download and install node.js from http://nodejs.org
 
-2. Install the following node modules: 
+2. Install SASS with ```sudo gem install sass``` Refer to specific [install instructions](http://sass-lang.com/install) for your platform.
+
+3. Install the following node modules: 
 	* Apache Cordova CLI ```[sudo] npm install -g cordova```
-	* Ionic CLI ```[sudo] npm install -g ionic ```
+	* Ionic CLI ```[sudo] npm install -g ionic```	
 	
-3. Setup for iOS platform on a Mac   
+4. Setup for iOS platform on a Mac   
 	* Download Xcode from the Apple developer site or get it from the Mac App Store. You will also need the Command-Line-Tools. The Command-Line-Tools can be installed from the Downloads tab in Xcode Preferences.
 	* To be able to run app in iOS-Simulater or on a Device from the command line, install:
 	 ```
@@ -26,13 +28,16 @@ To setup your development box, follow these steps:
 	 [sudo] npm install -g ios-deploy
 	 ```
 
-4. Setup for android platform
+5. Setup for android platform
 	* TODO
 	
-5. Add platforms to your project
+6. Add platforms to your project
 	* ```ionic platform ios``` (on a Mac)
 	* ```ionic platform android```
 		
-6. Install all npm and bower packages
+7. Install all npm and bower packages
 	* ```npm install```
 	* ```node_modules/.bin/bower install```
+
+
+ionic setup sass ????
