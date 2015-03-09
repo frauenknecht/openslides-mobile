@@ -115,10 +115,35 @@ angular.module('osl', [	'ionic',
   		$urlRouterProvider.otherwise('/app/projector');		
 	})
 	
-	.factory('Settings', function () {
-		var Settings = {
-	    	language: 'en_US'
+	.factory('Settings', function ($translate) {
+				
+	    var Settings = {
+			
+			language: 'de',  
+			
+			setLanguage: function(key) {
+			  $translate.use(key).then(function (key) {
+				  Settings.language = key;
+				  localStorage.setItem('settings.language', Settings.language);
+				  console.log("Sprache zu " + key + " gewechselt.");						
+			  }, function (key) {
+				  console.log("Irgendwas lief schief.");	
+			  });
+		  }
 	  	};
+		
+	    try {
+			lang_key = localStorage.getItem('settings.language') || '';
+			console.log("lng: " + lang_key);
+			if (lang_key) {
+				Settings.language = lang_key;
+				Settings.setLanguage(lang_key);				
+			}
+				
+	    } catch (e) {
+			console.log("Lang: " + e);	
+	    }
+		
 	  	return Settings;
 	})
 	

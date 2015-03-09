@@ -1,13 +1,10 @@
 angular.module('osl')
 
-.controller('SettingsCtrl', function ($scope, $translate, Settings) {
-	$scope.settings = Settings;
+.controller('SettingsCtrl', function ($scope, Settings) {
+
+	$scope.language = Settings.language;
 	
 	$scope.changeLang = function (key) {
-		$translate.use(key).then(function (key) {
-			console.log("Sprache zu " + key + " gewechselt.");						
-		}, function (key) {
-			console.log("Irgendwas lief schief.");	
-		});
+		Settings.setLanguage(key);
   	};  
 });
