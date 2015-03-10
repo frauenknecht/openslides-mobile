@@ -29,6 +29,7 @@ angular.module('osl', [	'ionic',
 				url: "/projector",
 				views: {
 					'menuContent' : {
+						controller: 'ProjectorCtrl',
 						templateUrl: "templates/projector.html"
 					}
 				}
@@ -190,6 +191,13 @@ angular.module('osl', [	'ionic',
 			}  		
 	  	}
 
-	}]);
+	}])
+	
+	.factory('WebSocket', function (socketFactory) {
+		return socketFactory({
+			url: 'http://de.demo.openslides.org/projector/socket'
+		});
+	});
+	
 	
 			
