@@ -1,8 +1,9 @@
 
 angular.module('osl', [	'ionic', 
+						'ngCookies',
 						'pascalprecht.translate'] )
 
-	.run(function($ionicPlatform) {
+	.run(function($ionicPlatform, oslAuth, Settings) {
   		$ionicPlatform.ready(function() {
     		// Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     		// for form inputs)
@@ -11,14 +12,14 @@ angular.module('osl', [	'ionic',
     		}
     		if(window.StatusBar) {
       			StatusBar.styleDefault();
-    		}
+    		}		
   		});
 	})
 	
 	.config(function ($stateProvider, $urlRouterProvider) {
 
 		$stateProvider
-
+		
 			.state('app', {
 				url: '/app',
 				abstract: true,
@@ -101,7 +102,26 @@ angular.module('osl', [	'ionic',
 					}
 				}
 			})
-			
+	
+			.state('app.login', {
+				url: "/login",
+				views: {
+					'menuContent' : {
+						controller: 'LoginCtrl',
+						templateUrl: "templates/login.html"
+					}
+				}
+			})
+
+			.state('app.logout', {
+				url: "/logout",
+				views: {
+					'menuContent' : {
+						controller: 'SettingsCtrl',
+					}
+				}
+			})
+								
 			.state('app.settings', {
 				url: "/settings",
 				views: {
@@ -112,15 +132,17 @@ angular.module('osl', [	'ionic',
 				}
 			});
 			
-
-  		$urlRouterProvider.otherwise('/app/projector');		
+  		$urlRouterProvider.otherwise('/app/login');		
 	})
 	
 	.factory('Settings', function ($translate) {
 				
 	    var Settings = {
 			
-			language: 'de',  
+			language: 'de',
+			url: '127.0.0.1',
+			port: 8000,  
+			protocol: 'http',
 			
 			setLanguage: function(key) {
 			  $translate.use(key).then(function (key) {
@@ -198,6 +220,4 @@ angular.module('osl', [	'ionic',
 			url: 'http://de.demo.openslides.org/projector/socket'
 		});
 	});
-	
-	
 			

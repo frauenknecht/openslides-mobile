@@ -3,11 +3,28 @@
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
-  <ion-content class="has-header">
+  <ion-content class="has-header" padding="true">
+		<form>
 		<ion-list>
+			<ion-item class="item-divider">{{ 'SETTINGS_SERVER' | translate }}</ion-item>
+			<label class="item item-input">
+				<div class="input-label">{{ 'SETTINGS_PROTOCOL' | translate }}</div>
+				<select class="ion-input-select" ng-model="data.proto_selected"  ng-change="changeProtocol()">
+					<option ng-repeat="item in data.protocols" value="{{item}}">{{item}}</option>					
+				</select>
+			</label>
+			<label class="item item-input">
+				<div class="input-label">{{ 'SETTINGS_URL' | translate }}</div>
+    		<input type="text" value="data.server" ng-model="data.server">
+  		</label>
+			<label class="item item-input">
+				<div class="input-label">{{ 'SETTINGS_PORT' | translate }}</div>
+    		<input type="number" min="0" ng-model="data.port" value="data.port">
+  		</label>											
       <ion-item class="item-divider">{{ 'SETTINGS_LANGUAGE' | translate }}</ion-item>
-      <ion-radio ng-model="settings.language" ng-click="changeLang('de_DE')">{{ 'SETTINGS_GERMAN' | translate }}</ion-radio>
-      <ion-radio ng-model="settings.language" ng-click="changeLang('en_US')">{{ 'SETTINGS_ENGLISH' | translate }}</ion-radio>		
+      <ion-radio ng-model="data.language" ng-click="changeLang('de_DE')">{{ 'SETTINGS_GERMAN' | translate }}</ion-radio>
+      <ion-radio ng-model="data.language" ng-click="changeLang('en_US')">{{ 'SETTINGS_ENGLISH' | translate }}</ion-radio>		
 		</ion-list>
+	</form>		
   </ion-content>
 </ion-view>
