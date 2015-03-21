@@ -107,17 +107,7 @@ angular.module('osl', [	'ionic',
 				url: "/login",
 				views: {
 					'menuContent' : {
-						controller: 'LoginCtrl',
 						templateUrl: "templates/login.html"
-					}
-				}
-			})
-
-			.state('app.logout', {
-				url: "/logout",
-				views: {
-					'menuContent' : {
-						controller: 'SettingsCtrl',
 					}
 				}
 			})
@@ -220,4 +210,3 @@ angular.module('osl', [	'ionic',
 			url: 'http://de.demo.openslides.org/projector/socket'
 		});
 	});
-			
