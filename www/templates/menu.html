@@ -15,28 +15,28 @@
 
     <ion-content class="has-header">
       <ion-list>
-				<ion-item class="item-icon-left" ng-show="data.authenticated" ui-sref="app.projector" nav-clear menu-close>
+				<ion-item class="item-icon-left" ng-show="app.authenticated" ui-sref="app.projector" nav-clear menu-close>
 					<span class="icon ion-videocamera"></span> {{ 'MENU_PROJECTOR' | translate }}
 				</ion-item>
-				<ion-item class="item-icon-left" ng-show="data.authenticated" ui-sref="app.agenda" nav-clear menu-close>
+				<ion-item class="item-icon-left" ng-show="app.authenticated" ui-sref="app.agenda" nav-clear menu-close>
 					<span class="icon ion-clipboard"></span> {{ 'MENU_AGENDA' | translate }}
 				</ion-item>
-				<ion-item class="item-icon-left" ng-show="data.authenticated" ui-sref="app.motions" nav-clear menu-close>
+				<ion-item class="item-icon-left" ng-show="app.authenticated" ui-sref="app.motions" nav-clear menu-close>
 					<span class="icon ion-document"></span> {{ 'MENU_MOTIONS' | translate }}
 				</ion-item>
-				<ion-item class="item-icon-left" ng-show="data.authenticated" ui-sref="app.elections" nav-clear menu-close>
+				<ion-item class="item-icon-left" ng-show="app.authenticated" ui-sref="app.elections" nav-clear menu-close>
 					<span class="icon ion-stats-bars"></span> {{ 'MENU_ELECTIONS' | translate }}
 				</ion-item>
-				<ion-item class="item-icon-left" ng-show="data.authenticated" ui-sref="app.users" nav-clear menu-close>
+				<ion-item class="item-icon-left" ng-show="app.authenticated" ui-sref="app.users" nav-clear menu-close>
 					<span class="icon ion-person"></span> {{ 'MENU_PARTICIPANTS' | translate }}
 				</ion-item>
-				<ion-item class="item-icon-left" ng-show="data.authenticated" ui-sref="app.files" nav-clear menu-close>
+				<ion-item class="item-icon-left" ng-show="app.authenticated" ui-sref="app.files" nav-clear menu-close>
 					<span class="icon ion-paperclip"></span> {{ 'MENU_FILES' | translate }}
 				</ion-item>				
-				<ion-item class="item-icon-left" ng-hide="data.authenticated" ui-sref="app.login" nav-clear menu-close>
+				<ion-item class="item-icon-left" ng-hide="app.authenticated" ui-sref="app.login" nav-clear menu-close>
 					<span class="icon ion-log-in"></span> {{ 'MENU_LOGIN' | translate }}
 				</ion-item>
-				<ion-item class="item-icon-left" ng-show="data.authenticated" ng-click="logout()" nav-clear menu-close>
+				<ion-item class="item-icon-left" ng-show="app.authenticated" ng-click="app.logout()" nav-clear menu-close>
 					<span class="icon ion-log-out"></span> {{ 'MENU_LOGOUT' | translate }}
 				</ion-item>								
 				<ion-item class="item-icon-left" ui-sref="app.settings" nav-clear menu-close>
