@@ -1,23 +1,29 @@
 
 <ion-view title="{{ 'MENU_PARTICIPANTS' | translate }}">
-  <ion-nav-buttons side="left">
-    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-  </ion-nav-buttons>
-  <ion-content class="has-header">
-		<div class="bar bar-header item-input-inset">
+  
+	<ion-nav-bar class="bar-stable">
+		<ion-nav-buttons side="left">
+    	<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>		
+  	</ion-nav-buttons>
+	</ion-nav-bar>
+	
+	<ion-header-bar class="bar bar-subheader item-input-inset">
 			<ion-search placeholder="{{ 'USER_SEARCH' | translate }}" filter="search"></ion-search>
-		</div>
-		<div class="card" ng-if="vm.users.length">
-				<a class="item" 
-					 ng-repeat="user in vm.users | filter:search.value" 
-					 ui-sref="app.users-detail({id: user.id})">					 
-					 <h2>{{user.first_name}} {{user.last_name}}</h2>
-					 <p>{{user.groups}} {{user.structure_level}}</p>
-					 <p>{{ 'USER_PRESENT' | translate }}: 
-						 <i ng-if="user.is_present" class="icon ion-checkmark"></i>
-						 <i ng-if="!user.is_present" class="icon ion-close"></i>					
-					 </p>
-				</a>
-		</div>			
+	</ion-header-bar> 
+	
+  <ion-content has-subheader="true">
+		<a class="item" 
+				 collection-repeat="user in vm.users | filter:search.value" 
+				 collection-item-width="'100%'" 
+				 collection-item-height="80"
+				 ui-sref="app.users-detail({id: user.id})"> 
+				 
+				 <h2>{{user.first_name}} {{user.last_name}}</h2>
+				 <p>{{user.groups}} {{user.structure_level}}</p>
+				 <p>{{ 'USER_PRESENT' | translate }}: 
+					 <i ng-if="user.is_present" class="icon ion-checkmark"></i>
+					 <i ng-if="!user.is_present" class="icon ion-close"></i>					
+				 </p>				 
+		</a>
   </ion-content>
 </ion-view>
