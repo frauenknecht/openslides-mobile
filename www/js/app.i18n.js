@@ -22,6 +22,7 @@
 			MENU_LOGIN: 'Login',
 			MENU_LOGOUT: 'Logout',		
 			MENU_SETTINGS: 'Settings',
+			MENU_ABOUT: 'About',
 		
 			USER_SEARCH: 'Search a user',
 			USER_PRESENT: 'Present',
@@ -48,8 +49,8 @@
 			MENU_FILES: 'Dateien',
 			MENU_LOGIN: 'Anmelden',
 			MENU_LOGOUT: 'Abmelden',		
-		
 			MENU_SETTINGS: 'Einstellungen',
+			MENU_ABOUT: 'Info',
 
 			USER_SEARCH: 'Nach Benutzer suchen',
 			USER_PRESENT: 'Anwesend',

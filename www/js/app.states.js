@@ -112,6 +112,15 @@
 					templateUrl: "templates/settings.html"
 				}
 			}
+		})
+		
+		.state('app.about', {
+			url: "/about",
+			views: {
+				'menuContent' : {
+					templateUrl: "templates/about.html"
+				}
+			}
 		});
 		
 		$urlRouterProvider.otherwise('/app/login');				
