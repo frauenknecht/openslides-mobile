@@ -69,7 +69,7 @@
 			url: "/users",
 			views: {
 				'menuContent' : {
-					controller: 'UsersCtrl',						
+					controller: 'UsersCtrl as vm',						
 					templateUrl: "templates/users.html"
 				}
 			}
@@ -79,7 +79,7 @@
 			url: "/users/:id",
 			views: {
 				'menuContent' : {
-					controller: 'UserDetailCtrl',
+					controller: 'UserDetailCtrl as vm',
 					templateUrl: "templates/user_detail.html"
 				}
 			}											

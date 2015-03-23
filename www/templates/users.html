@@ -7,9 +7,9 @@
 		<div class="bar bar-header item-input-inset">
 			<ion-search placeholder="{{ 'USER_SEARCH' | translate }}" filter="search"></ion-search>
 		</div>
-		<div class="card" ng-if="users.length">
+		<div class="card" ng-if="vm.users.length">
 				<a class="item" 
-					 ng-repeat="user in users | filter:search.value" 
+					 ng-repeat="user in vm.users | filter:search.value" 
 					 ui-sref="app.users-detail({id: user.id})">					 
 					 <h2>{{user.first_name}} {{user.last_name}}</h2>
 					 <p>{{user.groups}} {{user.structure_level}}</p>

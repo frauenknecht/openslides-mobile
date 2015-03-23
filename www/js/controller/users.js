@@ -1,13 +1,26 @@
-angular.module('osl')
+(function() {
+	
+'use strict';
 
+	var osl = angular.module('osl')
 
+	osl.controller('UsersCtrl', UsersCtrl);		
+	UsersCtrl.$inject = [ 'Users' ];
+		
+	function UsersCtrl (Users) {		
+		var vm = this;			
+		vm.users = Users.all();			
+	};
+	
+	
+	osl.controller('UserDetailCtrl', UserDetailCtrl);		
+	UserDetailCtrl.$inject = [ '$stateParams',
+							   'Users' ];
 
-.controller('UsersCtrl', function ($scope, $state, Users) {	
-	$scope.users = users;
-})
-
-
-.controller('UserDetailCtrl', function ($scope, $stateParams, Users) {
-	$scope.user = Users.find($stateParams.id);
-});
-
+	function UserDetailCtrl ($stateParams, Users) {		
+		var vm = this;			
+		vm.user = Users.find($stateParams.id);	
+	};
+							
+})();		
+		
