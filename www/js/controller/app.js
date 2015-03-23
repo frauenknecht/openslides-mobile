@@ -23,7 +23,7 @@
 	
 		vm.login = login;
 		vm.logout = logout;
-							
+		
 		oslAuth.initialize(
 			Settings.protocol + '://' + 
 			Settings.url + ':' + 
@@ -45,11 +45,11 @@
     	});
 	
 		function login () {
-			
+					
 			$ionicHistory.nextViewOptions({
 		  	  disableBack: true
 			});
-		
+			
 			oslAuth.login(vm.username, vm.password)
 			
 			.then(function(data) {
