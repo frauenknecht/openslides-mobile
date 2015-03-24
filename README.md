@@ -19,6 +19,7 @@ To setup your development box, follow these steps:
 3. Install the following node modules: 
 	* Apache Cordova CLI ```[sudo] npm install -g cordova```
 	* Ionic CLI ```[sudo] npm install -g ionic```	
+	* Karma CLI ```[sudo]	npm install -g karma-cli```	(Optional, used to run tests)
 	
 4. Setup for iOS platform on a Mac   
 	* Download Xcode from the Apple developer site or get it from the Mac App Store. You will also need the Command-Line-Tools. The Command-Line-Tools can be installed from the Downloads tab in Xcode Preferences.
