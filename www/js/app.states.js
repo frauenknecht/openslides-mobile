@@ -19,106 +19,106 @@
 		})  
 		
   		.state('app.projector', {
-			url: "/projector",
+			url: '/projector',
 			views: {
 				'menuContent' : {
 					controller: 'ProjectorCtrl',
-					templateUrl: "templates/projector.html"
+					templateUrl: 'templates/projector.html'
 				}
 			}
 		})
 		
 		.state('app.agenda', {
-			url: "/agenda",
+			url: '/agenda',
 			views: {
 				'menuContent' : {
-					templateUrl: "templates/agenda.html"
+					templateUrl: 'templates/agenda.html'
 				}
 			}
 		})  
 		
 		.state('app.motions', {
-			url: "/motions",
+			url: '/motions',
 			views: {
 				'menuContent' : {
-					templateUrl: "templates/motions.html"
+					templateUrl: 'templates/motions.html'
 				}
 			}
 		})
 		
 		.state('app.elections', {
-			url: "/elections",
+			url: '/elections',
 			views: {
 				'menuContent' : {
-					templateUrl: "templates/elections.html"
+					templateUrl: 'templates/elections.html'
 				}
 			}
 		})
 
 		.state('app.election.detail', {
-			url: "/election/:id",
+			url: '/election/:id',
 			views: {
 				'menuContent' : {
 					controller: 'ElectionDetailCtrl',						
-					templateUrl: "templates/election_detail.html"
+					templateUrl: 'templates/election_detail.html'
 				}
 			}
 		})
 
 		.state('app.users', {
-			url: "/users",
+			url: '/users',
 			views: {
 				'menuContent' : {
 					controller: 'UsersCtrl as vm',						
-					templateUrl: "templates/users.html"
+					templateUrl: 'templates/users.html'
 				}
 			}
 		})
 
 		.state('app.users-detail', {
-			url: "/users/:id",
+			url: '/users/:id',
 			views: {
 				'menuContent' : {
 					controller: 'UserDetailCtrl as vm',
-					templateUrl: "templates/user_detail.html"
+					templateUrl: 'templates/user_detail.html'
 				}
 			}											
 		})
 
 		.state('app.files', {
-			url: "/files",
+			url: '/files',
 			views: {
 				'menuContent' : {
 					controller: 'FilesCtrl',						
-					templateUrl: "templates/files.html"
+					templateUrl: 'templates/files.html'
 				}
 			}
 		})
 
 		.state('app.login', {
-			url: "/login",
+			url: '/login',
 			views: {
 				'menuContent' : {
-					templateUrl: "templates/login.html"
+					templateUrl: 'templates/login.html'
 				}
 			}
 		})
 							
 		.state('app.settings', {
-			url: "/settings",
+			url: '/settings',
 			views: {
 				'menuContent' : {
 					controller: 'SettingsCtrl',
-					templateUrl: "templates/settings.html"
+					templateUrl: 'templates/settings.html'
 				}
 			}
 		})
 		
 		.state('app.about', {
-			url: "/about",
+			url: '/about',
 			views: {
 				'menuContent' : {
-					templateUrl: "templates/about.html"
+					templateUrl: 'templates/about.html'
 				}
 			}
 		});
