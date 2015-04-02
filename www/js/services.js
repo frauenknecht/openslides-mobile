@@ -55,7 +55,7 @@ angular.module('osl')
 		login: function(username, password) {
 
 			var defer = $q.defer();
-						
+/*						
 			this.request({
 				url: '/rest/token-auth/',
 				method: 'POST',
@@ -74,12 +74,15 @@ angular.module('osl')
             }, function (data) {
             	defer.reject(data);
             });
+*/
+			defer.resolve('data');			
+            $rootScope.$broadcast("auth.logged_in");
 			
 			return defer.promise;					
 		},
 		
 		logout: function() {
-			delete $http.defaults.headers.common.Authorization;
+			// delete $http.defaults.headers.common.Authorization;
             $rootScope.$broadcast("auth.logged_out");
 		},
 				

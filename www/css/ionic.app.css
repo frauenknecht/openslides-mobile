@@ -4545,7 +4545,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
 
 .popup-body {
   padding: 10px;
-  overflow: scroll; }
+  overflow: auto; }
 
 .popup-buttons {
   display: -webkit-box;
@@ -7601,3 +7601,12 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+.label {
+  font-weight: bold;
+  margin: 10px 0 0 0; }
+
+.section {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid gray; }

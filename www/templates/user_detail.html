@@ -1,10 +1,38 @@
 
 <ion-view title="{{ 'MENU_PARTICIPANT' | translate }}">
   <ion-content class="has-header">
-  	<div class="card">
-    	<div class="item">
-      	<p>{{vm.user.first_name}}</p>
-    	</div>
-  	</div>
+		<div class="user_detail" style="margin: 25px;">
+			<h1><span ng-if="vm.user.title">{{vm.user.title}} </span>{{vm.user.first_name}} {{vm.user.last_name}}</h1>
+			<p class="section">{{ 'USER_PERSONAL_DATA' | translate }}</p>		
+			<p>
+				<span class="label">{{ 'USER_GENDER' | translate }}: </span>
+				<span ng-if="vm.user.gender == 'M'">{{ 'USER_MALE' | translate }}</span>				
+				<span ng-if="vm.user.gender == 'F'">{{ 'USER_FEMALE' | translate }}</span>
+			</p>
+			<p>
+				<span class="label">{{ 'USER_EMAIL' | translate }}: </span>
+				{{ vm.user.email }}
+			</p>
+			<p>
+				<span class="label" style="width=20%;">{{ 'USER_ABOUT_ME' | translate }}: </span><br/>
+				{{ vm.user.about_me }}
+			</p>
+			
+			<p class="section">{{ 'USER_EVENT_DATA' | translate }}</p>
+			<p>
+				<span class="label">{{ 'USER_STRUCTURE_LEVEL' | translate }}: </span>
+				{{ vm.user.structure_level }}
+			</p>
+			<p>
+				<span class="label">{{ 'USER_COMITTEE' | translate }}: </span>
+				{{ vm.user.committee }}
+			</p>
+			<p>
+				<span class="label">{{ 'USER_GROUPS' | translate }}: </span>
+				<span ng-repeat="group in vm.user.groups">					
+					<span ng-if="!$last">{{ group }}, </span>	
+					<span ng-if="$last">{{ group }}</span>	
+			</p>
+		</div>
   </ion-content>
 </ion-view>

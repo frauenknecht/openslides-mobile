@@ -26,7 +26,17 @@
 		
 			USER_SEARCH: 'Search a user',
 			USER_PRESENT: 'Present',
-		
+			USER_PERSONAL_DATA: 'Personal data',
+			USER_GENDER: 'Gender',
+			USER_MALE: 'male',
+			USER_FEMALE: 'female',
+			USER_EMAIL: 'E-Mail',
+			USER_ABOUT_ME: 'About me',
+			USER_EVENT_DATA: 'Event data',			
+			USER_STRUCTURE_LEVEL: 'Structure level',
+			USER_COMITTEE: 'Comittee',
+			USER_GROUPS: 'Groups',
+					
 			LOGIN_USERNAME: 'Username',
 			LOGIN_PASSWORD: 'Password',
 		
@@ -54,7 +64,17 @@
 
 			USER_SEARCH: 'Nach Benutzer suchen',
 			USER_PRESENT: 'Anwesend',
-
+			USER_PERSONAL_DATA: 'Persönliche Daten',
+			USER_GENDER: 'Geschlecht',
+			USER_MALE: 'männlich',
+			USER_FEMALE: 'weiblich',
+			USER_EMAIL: 'E-Mail',
+			USER_ABOUT_ME: "Über mich",			
+			USER_EVENT_DATA: 'Veranstaltungsdaten',
+			USER_STRUCTURE_LEVEL: 'Gliederungsebene',
+			USER_COMITTEE: 'Amt',
+			USER_GROUPS: 'Gruppen',
+								
 			LOGIN_USERNAME: 'Benutzername',
 			LOGIN_PASSWORD: 'Passwort',
 		

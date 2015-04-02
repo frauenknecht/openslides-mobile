@@ -19,7 +19,7 @@
 				 ui-sref="app.users-detail({id: user.id})"> 
 				 
 				 <h2>{{user.first_name}} {{user.last_name}}</h2>
-				 <p>{{user.groups}} {{user.structure_level}}</p>
+				 <p>{{user.structure_level}}</p>
 				 <p>{{ 'USER_PRESENT' | translate }}: 
 					 <i ng-if="user.is_present" class="icon ion-checkmark"></i>
 					 <i ng-if="!user.is_present" class="icon ion-close"></i>					
