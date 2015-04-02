@@ -12,6 +12,8 @@
 		$translateProvider
 	
 		.translations('en', {
+			APP_PULL_TO_REFRESH: 'Pull to refresh...',
+			
 			MENU_PROJECTOR: 'Projector',
 			MENU_AGENDA: 'Agenda',
 			MENU_MOTIONS: 'Motions',
@@ -25,7 +27,7 @@
 			MENU_ABOUT: 'About',
 		
 			USER_SEARCH: 'Search a user',
-			USER_PRESENT: 'Present',
+			USER_PRESENT: 'Present',			
 			USER_PERSONAL_DATA: 'Personal data',
 			USER_GENDER: 'Gender',
 			USER_MALE: 'male',
@@ -50,6 +52,8 @@
 		})
 
 		.translations('de', {
+			APP_PULL_TO_REFRESH: 'Ziehen zum Aktualisieren...',
+			
 			MENU_PROJECTOR: 'Projektor',
 			MENU_AGENDA: 'Tagesordnung',
 			MENU_MOTIONS: 'Anträge',

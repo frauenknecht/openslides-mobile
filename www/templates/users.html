@@ -12,10 +12,14 @@
 	</ion-header-bar> 
 	
   <ion-content has-subheader="true">
+		<ion-refresher 
+			pulling-text="{{ 'APP_PULL_TO_REFRESH' | translate }}" 
+			on-refresh="vm.doRefresh()">
+		</ion-refresher>
 		<a class="item" 
 				 collection-repeat="user in vm.users | filter:search.value" 
-				 collection-item-width="'100%'" 
-				 collection-item-height="80"
+				 collection-item-width="vm.getItemWidth()" 
+				 collection-item-height="vm.getItemHeight()"
 				 ui-sref="app.users-detail({id: user.id})"> 
 				 
 				 <h2>{{user.first_name}} {{user.last_name}}</h2>

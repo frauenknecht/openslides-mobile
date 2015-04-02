@@ -6,10 +6,11 @@
 
 	osl.controller('UsersCtrl', UsersCtrl);		
 
-	UsersCtrl.$inject = [ '$filter', 
+	UsersCtrl.$inject = [ '$scope',
+						  '$filter', 
 						  'Users' ];
 		
-	function UsersCtrl ($filter, Users) {		
+	function UsersCtrl ($scope, $filter, Users) {		
 		var vm = this;
 		
 		vm.letters = [];			
@@ -18,6 +19,7 @@
 		vm.getItemHeight = getItemHeight;
 		vm.getItemWidth = getItemWidth;
 		vm.scrollBottom = scrollBottom;
+		vm.doRefresh = doRefresh;
 		
 		init();
 		
@@ -27,7 +29,7 @@
 		}
 		
 		function getItemHeight (item) {
-			return item.isLetter ? 40 : 100;
+			return '80';
 		}	
 		
 		function getItemWidth () {
@@ -42,6 +44,20 @@
 			$ionicScrollDelegate.scrollBottom(true);
 		}	
 		
+		function doRefresh() {			
+			vm.users = Users.all();
+			$scope.$broadcast('scroll.refreshComplete');
+			
+			// TODO: User.all() should return a promise
+			// Then impl like this:
+			// 
+			// .success(function(users) {
+       		// 		vm.users  = users;
+     		// })
+     	    // .finally(function() {       
+       		// 		$scope.$broadcast('scroll.refreshComplete');
+     		// });			
+		}
 	};
 	
 	
