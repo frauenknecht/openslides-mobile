@@ -21,11 +21,11 @@
     "shelljs": "^0.3.0"
   },
   "cordovaPlugins": [
-    "https://github.com/pwlin/cordova-plugin-file-opener2",
     "com.ionic.keyboard",
-    "org.apache.cordova.console",
-    "org.apache.cordova.device",
-    "org.apache.cordova.inappbrowser",
-    "org.apache.cordova.dialogs"
-  ]
+    "cordova-plugin-console",
+    "cordova-plugin-device",
+    "cordova-plugin-dialogs",
+    "cordova-plugin-splashscreen"
+  ],
+  "cordovaPlatforms": []
 }
