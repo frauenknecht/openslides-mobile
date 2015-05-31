@@ -1,52 +1,49 @@
-
 // https://github.com/bendrucker/angular-sockjs/blob/master/src/index.js
 
 angular.module('osl')
 
 .value('SockJS', window.SockJS)
 
-.provider('socketFactory', function () {
+.provider('socketFactory', function() {
 	// expose to provider
-	this.$get = function (SockJS, $timeout) {
-		
-		var asyncAngularify = function (socket, callback) {
-        
-		return callback ? function () {
-          var args = arguments;
-          $timeout(function () {
-            callback.apply(socket, args);
-          }, 0);
-        } : angular.noop;
-      };
+	this.$get = function(SockJS, $timeout) {
 
-      return function socketFactory (options) {
-        options = options || {};
-        var socket = options.socket || new SockJS(options.url);
+		var asyncAngularify = function(socket, callback) {
 
-        var wrappedSocket = {
-          callbacks: {},
-          setHandler: function (event, callback) {
-            socket['on' + event] = asyncAngularify(socket, callback);
-            return this;
-          },
-          removeHandler: function(event) {
-            delete socket['on' + event];
-            return this;
-          },
-          send: function () {
-            return socket.send.apply(socket, arguments);
-          },
-          close: function () {
-            return socket.close.apply(socket, arguments);
-          }
-        };
+			return callback ? function() {
+				var args = arguments;
+				$timeout(function() {
+					callback.apply(socket, args);
+				}, 0);
+			} : angular.noop;
+		};
 
-        return wrappedSocket;
-      };
-    };
+		return function socketFactory(options) {
+			options = options || {};
+			var socket = options.socket || new SockJS(options.url);
 
-    this.$get.$inject = ['SockJS', '$timeout'];
+			var wrappedSocket = {
+				callbacks: {},
+				setHandler: function(event, callback) {
+					socket['on' + event] = asyncAngularify(socket, callback);
+					return this;
+				},
+				removeHandler: function(event) {
+					delete socket['on' + event];
+					return this;
+				},
+				send: function() {
+					return socket.send.apply(socket, arguments);
+				},
+				close: function() {
+					return socket.close.apply(socket, arguments);
+				}
+			};
+
+			return wrappedSocket;
+		};
+	};
+
+	this.$get.$inject = ['SockJS', '$timeout'];
 
 })
-
-
