@@ -11,8 +11,7 @@ angular.module('osl')
 		replace: true,
 		
 		scope: {
-			getData: '& source
-',
+			getData: '& source',
 			model: '=?',
 			search: '=?filter'
 		},
