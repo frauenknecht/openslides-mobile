@@ -1,11 +1,46 @@
 
 <ion-view title="{{ 'MENU_ELECTIONS' | translate }}">
-  <ion-nav-buttons side="left">
-    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-  </ion-nav-buttons>
-  <ion-content class="has-header">
-		<div class="card" ng-if="elections.length">
-			<a class="item" ng-repeat="e in elections" ui-sref="app.election.detail({id: '{{ e.id }}'})">{{e.name}} </a>
-		</div>	
-  </ion-content>
+
+	<ion-nav-bar class="bar-stable">
+		<ion-nav-buttons side="left">
+    	<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>		
+  	</ion-nav-buttons>
+	</ion-nav-bar>
+
+  <ion-content has-subheader="true">
+		<ion-refresher 
+			pulling-text="{{ 'APP_PULL_TO_REFRESH' | translate }}" 
+			on-refresh="vm.doRefresh()">
+		</ion-refresher>
+		
+		<ion-list type="list-inset">
+			<a class="item" ng-repeat="election in vm.elections" ui-sref="app.elections-detail({id: election.id})">
+				<div class="row responsive-sm"> 
+					<div class="col">
+						<h1>{{election.title}}</h1>
+					</div>
+				</div>
+				<div class="row responsive-sm">
+					<div class="col">
+						<span style="background-color:#3a87ad;color:#fff;font-weight:bold;padding:2px 4px;">{{election.phase}}</span>
+					</div>
+				</div>
+				<div class="row responsive-sm">			
+					<!-- TODO: Show Candidates only if ophase != finished -->	 
+					<div class="col">
+						{{ 'ELECTION_POSTS' | translate }}: 
+						<span style="background-color:#387ef5;color:#fff;padding:2px 4px;"> {{election.open_posts}}</span> 
+					</div>
+					<div class="col">
+						{{ 'ELECTION_CANDIDATES' | translate }}: 
+						<span style="background-color:#ffc900;color:#fff;padding:2px 4px;"> {{election.candidates}}</span>
+					</div>
+					<div class="col">
+						{{ 'ELECTION_ELECTED' | translate }}: 
+						<span style="background-color:#33cd5f;color:#fff;padding:2px 4px;">{{election.elected}}</span>
+					</div>
+				</div>				 				
+			</a>			 
+		</ion-list>
+  </ion-content>	
 </ion-view>

@@ -1,86 +1,58 @@
-angular.module('osl')
+(function() {
 
-.factory('Elections', ['$http',
-	function($http) {
+	'use strict';
 
-		var elections = [{
-				id: "1",
-				title: "Schatzmeister",
-				open_posts: "1",
-				candidates: "1",
-				elected: "0",
-				phase: "Auf Kandidatensuche"
-			},
+	var osl = angular.module('osl');
 
-			{
-				id: "2",
-				title: "Vorstand",
-				open_posts: "3",
-				candidates: "4",
-				elected: "0",
-				phase: "Im Wahlvorgang"
-			},
 
-			{
-				id: "3",
-				title: "Ältestenrat",
-				open_posts: "3",
-				candidates: "3",
-				elected: "0",
-				phase: "Im Wahlvorgang"
-			}
-		];
+	osl.controller('ElectionsCtrl', ElectionsCtrl);
 
-		return {
+	ElectionsCtrl.$inject = ['$scope', 'Elections'];
 
-			get_elections: function() {
-				return elections;
-			},
+	function ElectionsCtrl($scope, Elections) {
 
-			get_election: function(id) {
-				for (i = 0; i < elections.length; i++) {
-					if (elections[i].id == id) {
-						return elections[i];
-					}
-				}
-			}
+		var vm = this;
+
+		vm.elections = getItems();
+		vm.doRefresh = doRefresh;
+
+
+		function getItems() {
+			return Elections.all();
 		}
 
-	}
-])
+		function doRefresh() {
+			vm.elections = getItems();
+			$scope.$broadcast('scroll.refreshComplete');
 
-.controller('ElectionsCtrl', function($scope) {
-
-	$scope.elections = [{
-			id: "1",
-			title: "Schatzmeister",
-			open_posts: "1",
-			candidates: "1",
-			elected: "0",
-			phase: "Auf Kandidatensuche"
-		},
-
-		{
-			id: "2",
-			title: "Vorstand",
-			open_posts: "3",
-			candidates: "4",
-			elected: "0",
-			phase: "Im Wahlvorgang"
-		},
-
-		{
-			id: "3",
-			title: "Ältestenrat",
-			open_posts: "3",
-			candidates: "3",
-			elected: "0",
-			phase: "Im Wahlvorgang"
+			// TODO: Elections.all() should return a promise
+			// Then impl like this:
+			// 
+			// .success(function(users) {
+			// 		vm.users  = users;
+			// })
+			// .finally(function() {       
+			// 		$scope.$broadcast('scroll.refreshComplete');
+			// });			
 		}
-	];
-})
 
-.controller('ElectionDetailCtrl', function($scope, $stateParams) {
-	$scope.election
+	};
 
-});
+
+	osl.controller('ElectionDetailCtrl', ElectionDetailCtrl);
+
+	ElectionDetailCtrl.$inject = ['$stateParams', 'Elections'];
+
+	function ElectionDetailCtrl($stateParams, Elections) {
+
+		var vm = this;
+		vm.election = getItem($stateParams.id);
+
+
+		function getItem(id) {
+			return Elections.find(id);
+		}
+
+	};
+
+})();

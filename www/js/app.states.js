@@ -50,16 +50,17 @@
 			url: '/elections',
 			views: {
 				'menuContent': {
+					controller: 'ElectionsCtrl as vm',
 					templateUrl: 'templates/elections.html'
 				}
 			}
 		})
 
-		.state('app.election.detail', {
+		.state('app.elections-detail', {
 			url: '/election/:id',
 			views: {
 				'menuContent': {
-					controller: 'ElectionDetailCtrl',
+					controller: 'ElectionDetailCtrl as vm',
 					templateUrl: 'templates/election_detail.html'
 				}
 			}
