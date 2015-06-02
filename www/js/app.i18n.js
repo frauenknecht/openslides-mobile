@@ -25,7 +25,11 @@
 			MENU_LOGOUT: 'Logout',
 			MENU_SETTINGS: 'Settings',
 			MENU_ABOUT: 'About',
-
+				
+			ELECTION_POSTS: 'Posts',
+			ELECTION_CANDIDATES: 'Candidates',
+			ELECTION_ELECTED: 'Elected',
+			
 			USER_SEARCH: 'Search a user',
 			USER_PRESENT: 'Present',
 			USER_PERSONAL_DATA: 'Personal data',
@@ -66,6 +70,10 @@
 			MENU_SETTINGS: 'Einstellungen',
 			MENU_ABOUT: 'Info',
 
+			ELECTION_POSTS: 'Posten',
+			ELECTION_CANDIDATES: 'Kandidaten/innen',
+			ELECTION_ELECTED: 'Gewählt',
+						
 			USER_SEARCH: 'Nach Benutzer suchen',
 			USER_PRESENT: 'Anwesend',
 			USER_PERSONAL_DATA: 'Persönliche Daten',
