@@ -1,8 +1,114 @@
+
 <ion-view title="{{ 'MENU_MOTIONS' | translate }}">
-  <ion-nav-buttons side="left">
-    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-  </ion-nav-buttons>
-  <ion-content class="has-header">
-    <h1>Motions</h1>
-  </ion-content>
+	<ion-nav-bar class="bar-stable">
+		<ion-nav-buttons side="left">
+    	<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>		
+  	</ion-nav-buttons>
+	</ion-nav-bar>
+
+  <ion-content has-subheader="true">
+		<ion-refresher 
+			pulling-text="{{ 'APP_PULL_TO_REFRESH' | translate }}" 
+			on-refresh="vm.doRefresh()">
+		</ion-refresher>
+		
+		<ion-list type="list-inset">
+		
+			<div class="item">
+				<div class="row responsive-sm"> 
+					<div class="col item-text-wrap">
+						<h1>Entlastung des Vorstandes</h1>
+					</div>
+				</div>
+				<div class="row responsive-sm">
+					<div class="col">
+						<span style="background-color:#3a87ad;color:#fff;font-weight:bold;padding:2px 4px;">angenommen</span>
+					</div>
+				</div>
+				<div class="row responsive-sm">								
+					<div class="col item-text-wrap">
+						Sachgebiet:
+						<span> -</span>
+					</div>					
+				</div>				 												
+				<div class="row responsive-sm">								
+					<div class="col item-text-wrap">
+						Antragsteller/in:
+						<span> Vorstand</span>
+					</div>					
+				</div>				 							
+				<div class="row responsive-sm">								
+					<div class="col item-text-wrap">
+						Unterstützer/innen
+						<span style="background-color:#E68256;color:#fff;padding:2px 4px;">0</span>
+					</div>					
+				</div>				 								
+			</div>			 
+
+			<div class="item">
+				<div class="row responsive-sm"> 
+					<div class="col item-text-wrap">
+						<h1>Bildung stärken</h1>
+					</div>
+				</div>
+				<div class="row responsive-sm">
+					<div class="col">
+						<span style="background-color:#3a87ad;color:#fff;font-weight:bold;padding:2px 4px;">zugelassen</span>
+					</div>
+				</div>
+				<div class="row responsive-sm">								
+					<div class="col item-text-wrap">
+						Sachgebiet:
+						<span> Bildung</span>
+					</div>					
+				</div>				 																
+				<div class="row responsive-sm">								
+					<div class="col item-text-wrap">
+						Antragsteller/in:
+						<span> Morten Meinigmand (Dänemark)</span>
+					</div>					
+				</div>				 				
+				<div class="row responsive-sm">								
+					<div class="col item-text-wrap">
+						Unterstützer/innen
+						<span style="background-color:#33cd5f;color:#fff;padding:2px 4px;">2</span>
+					</div>					
+				</div>				 								
+			</div>			 
+
+			<div class="item">
+				<div class="row responsive-sm"> 
+					<div class="col item-text-wrap">
+						<h1>Umwelpolitischer Leitantrag</h1>
+					</div>
+				</div>
+				<div class="row responsive-sm">
+					<div class="col">
+						<span style="background-color:#3a87ad;color:#fff;font-weight:bold;padding:2px 4px;">zugelassen</span>
+					</div>
+				</div>
+				<div class="row responsive-sm">								
+					<div class="col item-text-wrap">
+						Sachgebiet:
+						<span> Umwelt</span>
+					</div>					
+				</div>				 																
+				<div class="row responsive-sm">								
+					<div class="col item-text-wrap">
+						Antragsteller/in:
+						<span> Harry Holland (Niederlande)</span>
+					</div>					
+				</div>				 				
+				<div class="row responsive-sm">								
+					<div class="col item-text-wrap">
+						Unterstützer/innen
+						<span style="background-color:#33cd5f;color:#fff;padding:2px 4px;">12</span>
+					</div>					
+				</div>				 								
+			</div>			 
+			
+			
+		</ion-list>
+  </ion-content>	
+
 </ion-view>
