@@ -1,18 +1,27 @@
+
 <ion-view title="{{ 'MENU_FILES' | translate }}">
-  <ion-nav-buttons side="left">
-    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-  </ion-nav-buttons>
-	<ion-content class="has-header">
-		<ion-list can-swipe="listCanSwipe">
-			<ion-item ng-repeat="file in files">
-			 	<div class="item item-button-right">
-				{{ file.title }}
-				<button class=" button button-positive" 
-								ng-click="open('{{ file.mediafile }}', '{{ file.filetype }}')">
-					  <i class="icon ion-document-text"></i>								
-		 		</button>			
-				</div>	
-			</ion-item>
-		</ion-list>
+  
+	<ion-nav-bar class="bar-stable">
+		<ion-nav-buttons side="left">
+    	<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>		
+  	</ion-nav-buttons>
+	</ion-nav-bar>
+	
+	<ion-header-bar class="bar bar-subheader item-input-inset">
+			<ion-search placeholder="{{ 'FILE_SEARCH' | translate }}" filter="search"></ion-search>
+	</ion-header-bar> 
+	
+  <ion-content has-subheader="true">
+		<ion-refresher 
+			pulling-text="{{ 'APP_PULL_TO_REFRESH' | translate }}" 
+			on-refresh="vm.doRefresh()">
+		</ion-refresher>
+
+				 <div class="item row responsive-sm" ng-repeat="file in vm.files | filter:search.value">				 
+				   <div class="col col-40 item-text-wrap"><h2>{{file.title}}</h2></div>
+				   <div class="col col-20 item-text-wrap"><small>{{file.type}}</small></div>
+				   <div class="col col-40 item-text-wrap"><small>{{file.uploader}}</small></div>
+				 </div>
+		</div>
   </ion-content>
 </ion-view>

@@ -43,6 +43,13 @@
 			USER_COMITTEE: 'Comittee',
 			USER_GROUPS: 'Groups',
 
+			FILE_SEARCH: 'Search a file',
+			FILE_TITLE: 'Title',
+			FILE_TYPE: 'Filetype',
+			FILE_SIZE: 'Filesize',
+			FILE_UPLOAD_TIME: 'Upload time',
+			FILE_UPLOADED_BY: 'Uploaded by',		
+						
 			LOGIN_USERNAME: 'Username',
 			LOGIN_PASSWORD: 'Password',
 
@@ -87,6 +94,13 @@
 			USER_COMITTEE: 'Amt',
 			USER_GROUPS: 'Gruppen',
 
+			FILE_SEARCH: 'Nach Dateien suchen',
+			FILE_TITLE: 'Titel',
+			FILE_TYPE: 'Typ',
+			FILE_SIZE: 'Größe',
+			FILE_UPLOAD_TIME: 'Hochladezeitpunkt',
+			FILE_UPLOADED_BY: 'Hochgeladen durch',		
+			
 			LOGIN_USERNAME: 'Benutzername',
 			LOGIN_PASSWORD: 'Passwort',
 

@@ -90,7 +90,7 @@
 			url: '/files',
 			views: {
 				'menuContent': {
-					controller: 'FilesCtrl',
+					controller: 'FilesCtrl as vm',
 					templateUrl: 'templates/files.html'
 				}
 			}
