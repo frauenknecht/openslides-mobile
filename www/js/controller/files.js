@@ -8,12 +8,20 @@
 
 	FilesCtrl.$inject = ['$scope',
 		'$filter',
+		'$cordovaInAppBrowser',
 		'Files'
 	];
 
-	function FilesCtrl($scope, $filter, Files) {
+	function FilesCtrl($scope, $filter, $cordovaInAppBrowser, Files) {
 		var vm = this;
 
+		var browser_options = {
+			location: 'no',
+			clearcache: 'yes',
+			toolbar: 'yes',
+			closebuttoncaption: 'DONE?'
+		};
+		
 		vm.columns = [];
 		vm.files = [];
 
@@ -21,6 +29,7 @@
 		vm.getItemWidth = getItemWidth;
 		vm.scrollBottom = scrollBottom;
 		vm.doRefresh = doRefresh;
+		vm.openUrl = openUrl;
 
 		init();
 
@@ -60,6 +69,17 @@
 			// 		$scope.$broadcast('scroll.refreshComplete');
 			// });			
 		}
+		
+		function openUrl(url) {						
+			$cordovaInAppBrowser.open(url, '_system', browser_options)
+				.then(function(event) {
+			          // success
+			    })
+				.catch(function(event) {
+			          // error
+				});			
+		}
+		
 	};
 
 
