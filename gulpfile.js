@@ -8,8 +8,10 @@ var rename = require('gulp-rename');
 var sh = require('shelljs');
 var karma = require('karma').server;
 var jshint = require('gulp-jshint')
+var babel = require('gulp-babel');
 
 var paths = {
+  es6: ['./es6/**/*.js'],
   sass: ['./scss/**/*.scss']
 };
 
@@ -27,8 +29,16 @@ gulp.task('sass', function(done) {
     .on('end', done);
 });
 
+gulp.task('babel', function(done) {
+  gulp.src('./es6/*.js')
+    .pipe(babel())
+    .pipe(gulp.dest('./www/js/'))
+    .on('end', done);
+});
+
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.es6, ['babel']);
 });
 
 gulp.task('install', ['git-check'], function() {
